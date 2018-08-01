@@ -13,7 +13,7 @@ class GossipsController < ApplicationController
   	if mon_gossip.save
   		redirect_to "<%= gossip_path(mon_gossip.id) %>"
   	else
-  		redirect_to "/gossips"
+  		redirect_to gossip_path
   	end
   end
 
