@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SHOW</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"/>
+</head>
+<body>
+	<header>
+      <ul class="nav nav-pills nav-fill">
+        <li class="nav-item"> <a class="nav-link" href= <%=root_path %> >Index des gossips</a> </li>
+        <li class="nav-item"> <a class="nav-link" href= <%=gossips_path %> >Nouveau Gossip</a> </li>
+      </ul>
+    </header>
+
+
+    <div class="center jumbotron">
+	  <h1>Gossip N°<%= @id %> !</h1>
+	  <% if @anonymous_author %>
+	  	<h2> <%= @anonymous_author %> </h2>
+	  <% else %>
+	  	<h2> Auteur Anonyme</h2>
+	  <% end %>
+
+	  <h3> <%= @title %> </h3>
+	  <p> <%= @content %> </p>
+
+	   <%= link_to "Editer ce Gossip", edit_gossip_path, class: "btn btn-lg btn-primary" %>
+	   <%= link_to "Revenir à l'Index", root_path, class: "btn btn-lg btn-primary" %>
+
+
+
+	</div>
+
+
+	
+
+</body>
+</html>

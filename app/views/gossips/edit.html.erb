@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EDIT GOSSIP</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"/>
+</head>
+<body>
+	<header>
+      <ul class="nav nav-pills nav-fill">
+        <li class="nav-item"> <a class="nav-link" href= <%=root_path %> >Index des gossips</a> </li>
+        <li class="nav-item"> <a class="nav-link" href= <%=gossips_path %> >Nouveau Gossip</a> </li>
+      </ul>
+    </header>
+
+
+
+    <div class="center jumbotron">
+    	<h1>Editons tout ca</h1>
+	
+    	<%= form_for @gossip do |f| %>
+	    	<div class="form-group">
+				<label>Anonymous Gossiper</label>
+	    		<%= f.text_field :anonymous_gossiper, class: 'form-control' %>				
+			</div>
+			<div class="form-group">
+				<label>Title</label>
+	    		<%= f.text_field :title, class: 'form-control' %>				
+			</div>
+			<div class="form-group">
+				<label>Content</label>
+	    		<%= f.text_field :content, class: 'form-control' %>				
+			</div>
+			<div>
+				<button type="submit" class="btn btn-primary" >Modifier le Gossip</button>
+			</div>
+    	<% end %>
+
+	</div>
+
+</body>
+</html>

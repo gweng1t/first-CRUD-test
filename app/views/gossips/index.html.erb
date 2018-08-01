@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New Gossip</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"/>
+</head>
+<body>
+	<header>
+      <ul class="nav nav-pills nav-fill">
+
+        <li class="nav-item"> <a class="nav-link" href= <%=root_path %> >Index des gossips</a> </li>
+        <li class="nav-item"> <a class="nav-link active" href= <%=gossips_path %> >Nouveau Gossip</a> </li>
+      </ul>
+    </header>
+
+
+
+
+
+
+	<div class="center jumbotron">
+		<h1>nom_fichier: INDEX</h1>
+		<h1>MAIS EN VRAI C'EST LE NEW GOSSIP</h1>
+		<h3>Aller balance nous les potins :</h3>
+
+		<form method="post">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<div class="form-group">
+			    <label>Anonymous Gossiper</label>
+			    <input name="author" type="text" class="form-control" placeholder="Enter your name">
+			</div>
+
+		  <div class="form-group">
+		    <label>Title</label>
+		    <input name="title" type="text" class="form-control" placeholder="Enter Title">
+		    <small class="form-text text-muted">Ecris un titre qui donne envie d'aller lire le Gossip ;)</small>
+		  </div>
+
+		  <div class="form-group">
+		    <label>Content</label>
+		    <input name="content" type="text" class="form-control" placeholder="Enter Content">
+		  </div>
+
+		  <button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+
+	</div>
+
+
+
+</body>
+</html>

@@ -1,3 +1,43 @@
-<h1>STATIC PAGE --- ACCUEIL</h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HOME</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"/>
+</head>
+<body>
+	 <header>
+      <ul class="nav nav-pills nav-fill">
 
-<p>On est sur la page home ;)</p>
+        <li class="nav-item"> <a class="nav-link active" href= <%=root_path %> >Index des gossips</a> </li>
+        <li class="nav-item"> <a class="nav-link" href= <%=gossips_path %> >Nouveau Gossip</a> </li>
+      </ul>
+    </header>
+
+
+
+
+
+
+	<div class="center jumbotron">
+	  <h1>Bienvenue !</h1>
+	  <h3> Ici, tu peux retrouver de bon Gossip 🎓 </h3>
+	  <%= link_to "Nouveau Gossip", gossips_path, class: "btn btn-lg btn-primary" %>
+	  <!-- <%= link_to "Voir les Gossip !", nil, class: "btn btn-lg btn-primary" %> -->
+	</div>
+
+
+
+	<h3>Voir TOUS les Gossip :</h3>
+	<ul>
+		<% @gossip_tab.each do |gossip| %>
+			<li> <strong> <%= gossip.title+ ": "%></strong> </li>
+			<p> <%= gossip.content %>   <a href="<%= gossip_path(gossip.id) %>" class="btn btn-primary">Voir Gossip Info</a> <a href="<%= gossip_path(gossip.id) %>" class="btn btn-danger" data-method="DELETE">Delete</a> </p>
+
+		<% end %>
+	</ul>
+
+
+
+
+</body>
+</html>
