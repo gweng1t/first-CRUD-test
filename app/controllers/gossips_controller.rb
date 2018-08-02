@@ -9,11 +9,14 @@ class GossipsController < ApplicationController
   def create
   	puts "-"*50
   	puts params
+
   	mon_gossip = Gossip.new(title: params[:title], content: params[:content], anonymous_gossiper: params[:author])
   	if mon_gossip.save
-  		redirect_to "<%= gossip_path(mon_gossip.id) %>"
+  		puts
+  		puts mon_gossip.id
+  		redirect_to	 gossip_path(mon_gossip.id)
   	else
-  		redirect_to gossip_path
+  		redirect_to	 gossips_path
   	end
   end
 
@@ -40,8 +43,7 @@ class GossipsController < ApplicationController
   end
 
   def destroy
-  	@id = params[:id]
-  	@gossip = Gossip.find(@id)
+  	@gossip = Gossip.find(params[:id])
   	@gossip.destroy
   	redirect_to root_path
   end
